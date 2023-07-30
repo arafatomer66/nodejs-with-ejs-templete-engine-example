@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task Manager</title>
+</head>
+<body>
+    <h1>Task Manager</h1>
+    <ul>
+        <% tasks.forEach((task) => { %>
+            <li><%= task.name %> (<a href="/tasks/<%= task.id %>/edit">Edit</a> | 
+            <form method="post" action="/tasks/<%= task.id %>?_method=DELETE" style="display: inline;">
+                <button type="submit" style="color: red;">Delete</button>
+            </form>)</li>
+        <% }) %>
+    </ul>
+    <a href="/tasks/new">Add New Task</a>
+</body>
+</html>
